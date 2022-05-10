@@ -4,7 +4,7 @@
         "version": "PTDL_v1",
         "update_url": null
     },
-    "exported_at": "2022-05-10T14:48:25+02:00",
+    "exported_at": "2022-05-10T18:07:13+02:00",
     "name": "Custom_Paper",
     "author": "ritheesh58@gmail.com",
     "description": "Good Egg.",
@@ -19,7 +19,7 @@
     "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
     "config": {
         "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"server-port\": \"{{server.build.default.port}}\",\r\n            \"query.port\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
-        "startup": "{\r\n    \"userInteractions\": [\r\n        \"You need to agree to the EULA\"\r\n    ],\r\n    \"done\": \")! For help, type \"\r\n}",
+        "startup": "{\r\n    \"userInteractions\": [\r\n        \"Go to eula.txt for more info.\"\r\n    ],\r\n    \"done\": \")! For help, type \"\r\n}",
         "logs": "{}",
         "stop": "stop"
     },
