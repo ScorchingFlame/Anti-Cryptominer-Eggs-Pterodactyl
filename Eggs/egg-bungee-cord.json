@@ -1,0 +1,53 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1",
+        "update_url": null
+    },
+    "exported_at": "2022-05-10T16:18:38+02:00",
+    "name": "BungeeCord",
+    "author": "ritheesh58@gmail.com",
+    "description": null,
+    "features": null,
+    "images": [
+        "ghcr.io\/scorchingflame\/creeper-host-eggs:bungee_java_17",
+        "ghcr.io\/scorchingflame\/creeper-host-eggs:bungee_java_16",
+        "ghcr.io\/scorchingflame\/creeper-host-eggs:bungee_java_11",
+        "ghcr.io\/scorchingflame\/creeper-host-eggs:bungee_java_8"
+    ],
+    "file_denylist": [],
+    "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
+    "config": {
+        "files": "{\r\n    \"config.yml\": {\r\n        \"parser\": \"yaml\",\r\n        \"find\": {\r\n            \"listeners[0].query_port\": \"{{server.build.default.port}}\",\r\n            \"listeners[0].host\": \"0.0.0.0:{{server.build.default.port}}\",\r\n            \"servers.*.address\": {\r\n                \"regex:^(127\\\\.0\\\\.0\\\\.1|localhost)(:\\\\d{1,5})?$\": \"{{config.docker.interface}}$2\"\r\n            }\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \"Listening on \"\r\n}",
+        "logs": "{}",
+        "stop": "end"
+    },
+    "scripts": {
+        "installation": {
+            "script": "echo \"If you want to Change Your Bungee Cord Version, You can change it In Startup Menu\"",
+            "container": "ghcr.io\/pterodactyl\/installers:alpine",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Bungeecord Version",
+            "description": "The version of Bungeecord to download and use.",
+            "env_variable": "BUNGEE_VERSION",
+            "default_value": "latest",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|alpha_num|between:1,6"
+        },
+        {
+            "name": "Bungeecord Jar File",
+            "description": "The name of the Jarfile to use when running Bungeecord.",
+            "env_variable": "SERVER_JARFILE",
+            "default_value": "bungeecord.jar",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|regex:\/^([\\w\\d._-]+)(\\.jar)$\/"
+        }
+    ]
+}
