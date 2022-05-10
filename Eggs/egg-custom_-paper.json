@@ -4,22 +4,22 @@
         "version": "PTDL_v1",
         "update_url": null
     },
-    "exported_at": "2022-05-10T13:57:35+02:00",
+    "exported_at": "2022-05-10T14:48:25+02:00",
     "name": "Custom_Paper",
     "author": "ritheesh58@gmail.com",
     "description": "Good Egg.",
     "features": null,
     "images": [
-        "ghcr.io\/scorchingflame\/creeper-host-eggs:paper_java_8",
-        "ghcr.io\/scorchingflame\/creeper-host-eggs:paper_java_11",
+        "ghcr.io\/scorchingflame\/creeper-host-eggs:paper_java_17",
         "ghcr.io\/scorchingflame\/creeper-host-eggs:paper_java_16",
-        "ghcr.io\/scorchingflame\/creeper-host-eggs:paper_java_17"
+        "ghcr.io\/scorchingflame\/creeper-host-eggs:paper_java_11",
+        "ghcr.io\/scorchingflame\/creeper-host-eggs:paper_java_8"
     ],
     "file_denylist": [],
     "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
     "config": {
         "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"server-port\": \"{{server.build.default.port}}\",\r\n            \"query.port\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
-        "startup": "{\r\n    \"done\": \")! For help, type \"\r\n}",
+        "startup": "{\r\n    \"userInteractions\": [\r\n        \"You need to agree to the EULA\"\r\n    ],\r\n    \"done\": \")! For help, type \"\r\n}",
         "logs": "{}",
         "stop": "stop"
     },
